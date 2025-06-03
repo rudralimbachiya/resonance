@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>resonance</title>
+  <style>
+    body {
+      font-family: 'Cardo', serif;
+      background: #121212;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    pre {
+      background: #1e1e1e;
+      color: #0af;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      overflow-x: auto;
+      max-width: 90vw;
+    }
+
+    input, button {
+      font-family: 'Cardo', serif;
+      font-size: 1rem;
+      padding: 0.5rem;
+      margin-top: 1rem;
+      border-radius: 4px;
+      border: none;
+    }
+
+    input {
+      width: 200px;
+      text-align: center;
+    }
+
+    button {
+      background-color: #0af;
+      color: #121212;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #08c;
+    }
+
+    .message {
+      margin-top: 1rem;
+      height: 1.5rem;
+      font-weight: bold;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 8px;
+      font-size: 0.75rem;
+      opacity: 0.4;
+    }
+  </style>
+</head>
+<body>
+  <h2>3</h2>
+
+  <pre>
+s = [116, 104, 101, 32, 112, 97, 115, 115, 119, 111, 114, 100, 32, 105, 115, 32, 116, 104, 101, 32, 99, 97, 112, 105, 116, 97, 108, 32, 111, 102, 32, 105, 116, 97, 108, 121]
+print(''.join([chr(i) for i in s]))
+  </pre>
+
+  <input type="text" id="answer" placeholder="resonate here" autocomplete="off" />
+  <button id="submit">resonate</button>
+  <div class="message" id="message"></div>
+
+  <footer>169</footer>
+
+  <script>
+    const answer = document.getElementById('answer');
+    const message = document.getElementById('message');
+    const submit = document.getElementById('submit');
+
+    submit.addEventListener('click', () => {
+      const val = answer.value.trim().toLowerCase();
+      if (val === 'rome') {
+        message.style.color = '#0f0';
+        message.textContent = "resonance found.";
+        setTimeout(() => {
+          window.location.href = '5focusbro.html';
+        }, 3000);
+      } else {
+        message.style.color = '#f44';
+        message.textContent = 'nah yo wyd';
+      }
+    });
+
+    answer.addEventListener('keydown', e => {
+      if (e.key === 'Enter') submit.click();
+    });
+  </script>
+</body>
+</html>

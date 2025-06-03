@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>works</title>
+  <style>
+    body {
+      font-family: 'Cardo', serif;
+      background: #121212;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+    a {
+      color: #0af;
+      text-decoration: none;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    input, button {
+      font-family: 'Cardo', serif;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      margin-top: 1rem;
+      border-radius: 4px;
+      border: 2px solid transparent;
+    }
+    input {
+      width: 200px;
+      text-align: center;
+    }
+    button {
+      background-color: #0af;
+      color: #121212;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+    }
+    button:hover {
+      background-color: transparent;
+      color: #0af;
+      border: 2px solid #0af;
+    }
+    .caption {
+      font-style: italic;
+      color: #bbb;
+      font-size: 0.9rem;
+    }
+    .message {
+      margin-top: 1rem;
+      height: 1.5rem;
+      font-weight: bold;
+    }
+    footer {
+      position: absolute;
+      bottom: 8px;
+      font-size: 0.75rem;
+      opacity: 0.4;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://en.wikipedia.org/wiki/Caesar_cipher" target="_blank" rel="noopener noreferrer">
+    ...
+  </a>
+  <h2>1</h2>
+  <p>Responsum est nomen scriptoris libri secundi.</p>
+  <input type="text" id="answer" placeholder="resonate here" autocomplete="off" />
+  <div class="caption">don't believe everything you think</div>
+  <button id="submit">resonate</button>
+  <div class="message" id="message"></div>
+
+  <footer>269</footer>
+
+  <script>
+    const answer = document.getElementById('answer');
+    const message = document.getElementById('message');
+    const submit = document.getElementById('submit');
+
+    submit.addEventListener('click', () => {
+      const val = answer.value.trim().toLowerCase();
+      if (val === 'joseph nguyen') {
+        message.style.color = '#0f0';
+        message.textContent = "das is sehr gut";
+        setTimeout(() => {
+          message.textContent = "now for the last trick";
+          setTimeout(() => {
+            window.location.href = 'final-pass.html';
+          }, 3000);
+        }, 5000);
+      } else {
+        message.style.color = '#f44';
+        message.textContent = 'is it all latin to you, caesar?';
+      }
+    });
+
+    answer.addEventListener('keydown', e => {
+      if (e.key === 'Enter') submit.click();
+    });
+  </script>
+</body>
+</html>

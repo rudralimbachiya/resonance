@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>still</title>
+  <style>
+    body {
+      font-family: 'Cardo', serif;
+      background: #121212;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+    button {
+      font-family: 'Cardo', serif;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem;
+      border-radius: 4px;
+      border: none;
+      background-color: #0af;
+      color: #121212;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #08c;
+    }
+    #options {
+      margin-top: 1.5rem;
+    }
+    #inputSection {
+      display: none;
+      margin-top: 1rem;
+    }
+    input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      font-family: 'Cardo', serif;
+      width: 220px;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    .caption {
+      font-style: italic;
+      color: #bbb;
+      font-size: 0.9rem;
+    }
+    .message {
+      margin-top: 1rem;
+      height: 1.5rem;
+      font-weight: bold;
+    }
+    footer {
+      position: absolute;
+      bottom: 8px;
+      font-size: 0.75rem;
+      opacity: 0.4;
+    }
+  </style>
+</head>
+<body>
+  <h2>2</h2>
+  <p>you are deep in the legendary mine of bhadronium, and you hear some sound...</p>
+
+  <div id="options">
+    <button onclick="handleOption(1)">keep mining for flowers</button>
+    <button onclick="handleOption(2)">follow le resonance</button>
+    <button onclick="handleOption(3)">say 'gtg' and think about it</button>
+  </div>
+
+  <div id="result" class="message"></div>
+
+  <div id="inputSection">
+    <input type="text" id="answer" placeholder="resonate here" autocomplete="off" />
+    <div class="caption">( think )</div>
+    <button onclick="checkAnswer()">resonate</button>
+    <div id="response" class="message"></div>
+  </div>
+
+  <footer>209</footer>
+
+  <script>
+    function handleOption(option) {
+      const result = document.getElementById('result');
+      if (option === 1) {
+        result.textContent = "never thought this day would come...";
+      } else if (option === 2) {
+        result.textContent = "it wasn't resonance it was just a ceo's phone ringing...";
+      } else if (option === 3) {
+        result.textContent = "note this answer with the words you have been noticing...have you?";
+        result.textContent = "think is the answer";
+        document.getElementById('inputSection').style.display = 'block';
+      }
+    }
+
+    function checkAnswer() {
+      const val = document.getElementById('answer').value.trim().toLowerCase();
+      const response = document.getElementById('response');
+      if (val === 'think') {
+        response.style.color = '#0f0';
+        response.textContent = 'damn';
+        setTimeout(() => {
+          window.location.href = '6dontlookherebro.html';
+        }, 2000);
+      } else {
+        response.style.color = '#f44';
+        response.textContent = 'bruh';
+      }
+    }
+
+    document.getElementById('answer').addEventListener('keydown', e => {
+      if (e.key === 'Enter') checkAnswer();
+    });
+  </script>
+</body>
+</html>

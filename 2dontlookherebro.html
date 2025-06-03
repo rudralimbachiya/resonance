@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>think</title>
+  <style>
+    body {
+      font-family: 'Cardo', serif;
+      background: #121212;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .subtle {
+      position: absolute;
+      top: 8px;
+      font-size: 0.65rem;
+      opacity: 0.4;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.8rem;
+      color: #555;
+    }
+
+    input, button {
+      font-family: 'Cardo', serif;
+      font-size: 1rem;
+      padding: 0.5rem;
+      margin-top: 1rem;
+      border-radius: 4px;
+      border: none;
+    }
+
+    input {
+      width: 200px;
+      text-align: center;
+    }
+
+    button {
+      background: none;
+      border: 2px solid #0af;
+      color: #0af;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0af;
+      color: #121212;
+    }
+
+    .message {
+      margin-top: 1rem;
+      height: 1.5rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="subtle">read slowly.</div>
+
+  <h2>5</h2>
+  <p>i <span style="font-style: italic;">still</span> remember, when u got tickled you threw...?</p>
+  <input type="text" id="answer" placeholder="resonate here" autocomplete="off" />
+  <button id="submit">resonate</button>
+  <div class="message" id="message"></div>
+
+  <footer>69</footer>
+
+  <script>
+    const answer = document.getElementById('answer');
+    const message = document.getElementById('message');
+    const submit = document.getElementById('submit');
+
+    submit.addEventListener('click', () => {
+      const val = answer.value.trim().toLowerCase();
+      if (val === 'bhadres') {
+        message.style.color = '#0f0';
+        message.textContent = "julius caeser did boxing too";
+        setTimeout(() => {
+          window.location.href = '3dontlookherebropls.html';
+        }, 3000);
+      } else {
+        message.style.color = '#f44';
+        message.textContent = 'ouch.';
+      }
+    });
+
+    answer.addEventListener('keydown', e => {
+      if (e.key === 'Enter') submit.click();
+    });
+  </script>
+</body>
+</html>
