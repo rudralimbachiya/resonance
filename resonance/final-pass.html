@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>final-password</title>
+  <style>
+    body {
+      font-family: 'Cardo', serif;
+      background: #121212;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 1rem;
+      text-align: center;
+    }
+    input, button {
+      font-family: 'Cardo', serif;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      margin-top: 1rem;
+      border-radius: 4px;
+      border: 2px solid transparent;
+    }
+    input {
+      width: 260px;
+      text-align: center;
+    }
+    button {
+      background-color: #0af;
+      color: #121212;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+    }
+    button:hover {
+      background-color: transparent;
+      color: #0af;
+      border: 2px solid #0af;
+    }
+    .message {
+      margin-top: 1rem;
+      height: 1.5rem;
+      font-weight: bold;
+    }
+    .caption {
+      font-style: italic;
+      color: #bbb;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <h2>final gate</h2>
+  <p>what dost caesar the VII say?</p>
+  <input type="text" id="answer" placeholder="resonate here" autocomplete="off" />
+  <div class="caption">( the sentence… )</div>
+  <button id="submit">resonate</button>
+  <div class="message" id="message"></div>
+
+  <script>
+    const correct = "i think the resonance still works";
+    const input = document.getElementById('answer');
+    const message = document.getElementById('message');
+    const button = document.getElementById('submit');
+
+    button.addEventListener('click', () => {
+      const val = input.value.trim().toLowerCase();
+      if (val === correct) {
+        message.style.color = '#0f0';
+        message.textContent = 'resonance confirmed...';
+        setTimeout(() => {
+          window.location.href = 'readthepoembro.html';
+        }, 2000);
+      } else {
+        message.style.color = '#f44';
+        message.textContent = 'nah yo wyd';
+      }
+    });
+
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter') button.click();
+    });
+  </script>
+</body>
+</html>
